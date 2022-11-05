@@ -38,14 +38,15 @@ body {
 .shop-btn {
   width: 50%;
   border: none;
+  border-radius: 40px;
   padding: 30px;
   color: #323232;
-  /* border: 2px solid linear-gradient(red, blue); */
   font-size: 100%;
 }
 .shop-btn:hover {
   color: #fff;
-  background-color: #323232;
+  background: none;
+  border: 2px solid #fff;
 }
 @media screen and (max-width: 574px) {
   .main {
