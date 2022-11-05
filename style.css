@@ -1,0 +1,57 @@
+body {
+  background-color: #323232;
+}
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  margin: 0;
+  opacity: 0.4;
+  z-index: -1;
+}
+.logo {
+  width: 300px;
+  padding: 50px;
+}
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  bottom: 15%;
+  width: 100%;
+}
+.welcome-text {
+  width: 70%;
+  text-align: center;
+}
+.welcome-text h2 {
+  font-size: 50px;
+  font-family: roboto;
+  color: white;
+}
+.shop-btn {
+  width: 50%;
+  border: none;
+  padding: 30px;
+  color: #323232;
+  /* border: 2px solid linear-gradient(red, blue); */
+  font-size: 100%;
+}
+.shop-btn:hover {
+  color: #fff;
+  background-color: #323232;
+}
+@media screen and (max-width: 574px) {
+  .main {
+    position: relative;
+  }
+  .shop-btn {
+    width: 100%;
+  }
+}
