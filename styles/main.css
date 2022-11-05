@@ -1,0 +1,15 @@
+body {
+  background-color: black;
+  color: white;
+}
+.navBar {
+  background-color: #575757;
+  position: fixed;
+  width: 100%;
+  padding: 30px;
+  margin: 0;
+  border: 0;
+}
+.logo {
+  width: 300px;
+}
