@@ -1,15 +1,76 @@
 body {
-  background-color: black;
+  /* background-color: black;*/
   color: white;
+  margin: 0;
 }
+
+/* NAVBAR CODE */
 .navBar {
   background-color: #575757;
-  position: fixed;
+  position: sticky;
   width: 100%;
-  padding: 30px;
-  margin: 0;
-  border: 0;
+  padding-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
 }
 .logo {
-  width: 300px;
+  width: 25%;
+}
+.logo img {
+  margin-left: 10%;
+}
+
+.menu {
+  /* border: 2px solid; */
+  width: 50%;
+  margin-left: 0;
+  display: flex;
+  justify-content: center;
+}
+.menu ul {
+  display: flex;
+  list-style-type: none;
+}
+.menu ul a {
+  padding-right: 30px;
+  font-size: 1.5em;
+}
+
+.top-right {
+  width: 25%;
+  display: flex;
+  justify-content: end;
+  /* border: 2px solid; */
+}
+.allContent {
+  margin-right: 5%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.search-bar {
+  align-self: center;
+  background-color: #000;
+  width: 100%;
+  border-radius: 30px;
+  padding: 10px;
+  display: flex;
+}
+i {
+  height: 100%;
+}
+input {
+  cursor: pointer;
+  margin-left: 0;
+  margin-right: 0;
+  background: none;
+  height: 50%;
+  width: 100%;
+  border: none;
+  color: white;
+}
+.more {
+  padding: 15px;
+  align-self: center;
+  font-size: 30px;
 }
