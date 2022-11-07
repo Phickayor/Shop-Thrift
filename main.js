@@ -21,6 +21,7 @@ const sliderDetails = [
 var prev = gid("prev");
 var next = gid("next");
 var newArrivalsDiv = gid("allNewArrivals");
+var mostWantedDiv = gid("allMostWanted");
 var sliderDiv = gid("slider");
 next.addEventListener("click", function () {
   nextSlider();
@@ -28,14 +29,25 @@ next.addEventListener("click", function () {
 prev.addEventListener("click", function () {
   prevSlider();
 });
-var seeMoreOrLessBtn = gid("seeMoreArrivals");
-seeMoreOrLessBtn.addEventListener("click", function () {
-  if (seeMoreOrLessBtn.innerHTML == "See Less") {
-    seeMoreOrLessBtn.innerHTML = "See More";
+var seeMoreArrivalsOrLessBtn = gid("seeMoreArrivals");
+var seeMoreMostWantedBtn = gid("seeMoreMostWanted");
+// SEE MORE FUNCTION FOR NEW ARRIVALS
+seeMoreArrivalsOrLessBtn.addEventListener("click", function () {
+  if (seeMoreArrivalsOrLessBtn.innerHTML == "See Less") {
+    seeMoreArrivalsOrLessBtn.innerHTML = "See More";
   } else {
-    seeMoreOrLessBtn.innerHTML = "See Less";
+    seeMoreArrivalsOrLessBtn.innerHTML = "See Less";
   }
   newArrivalsDiv.classList.toggle("seeMore");
+});
+// SEE MORE BUTTON FOR MOST WANTED
+seeMoreMostWantedBtn.addEventListener("click", function () {
+  if (seeMoreMostWantedBtn.innerHTML == "See Less") {
+    seeMoreMostWantedBtn.innerHTML = "See More";
+  } else {
+    seeMoreMostWantedBtn.innerHTML = "See Less";
+  }
+  mostWantedDiv.classList.toggle("seeMore");
 });
 var i = 0;
 function slider() {
@@ -128,6 +140,76 @@ function newArrivals() {
   });
 }
 
+//MOST WANTED
+const mostWantedDetails = [
+  {
+    image:
+      "https://images.pexels.com/photos/2884834/pexels-photo-2884834.jpeg?auto=compress&cs=tinysrgb&w=2000",
+    text: "Lorem ipsum Amlq",
+    amount: "20000"
+  },
+  {
+    image:
+      "https://images.pexels.com/photos/2884834/pexels-photo-2884834.jpeg?auto=compress&cs=tinysrgb&w=2000",
+    text: "Lorem ipsum Amlq",
+    amount: "20000"
+  },
+  {
+    image:
+      "https://images.pexels.com/photos/2884834/pexels-photo-2884834.jpeg?auto=compress&cs=tinysrgb&w=2000",
+    text: "Lorem ipsum Amlq",
+    amount: "20000"
+  },
+  {
+    image:
+      "https://images.pexels.com/photos/2884834/pexels-photo-2884834.jpeg?auto=compress&cs=tinysrgb&w=2000",
+    text: "Lorem ipsum Amlq",
+    amount: "20000"
+  },
+  {
+    image:
+      "https://images.pexels.com/photos/2884834/pexels-photo-2884834.jpeg?auto=compress&cs=tinysrgb&w=2000",
+    text: "Lorem ipsum Amlq",
+    amount: "20000"
+  },
+  {
+    image:
+      "https://images.pexels.com/photos/2884834/pexels-photo-2884834.jpeg?auto=compress&cs=tinysrgb&w=2000",
+    text: "Lorem ipsum Amlq",
+    amount: "20000"
+  },
+  {
+    image:
+      "https://images.pexels.com/photos/2884834/pexels-photo-2884834.jpeg?auto=compress&cs=tinysrgb&w=2000",
+    text: "Lorem ipsum Amlq",
+    amount: "20000"
+  },
+  {
+    image:
+      "https://images.pexels.com/photos/2884834/pexels-photo-2884834.jpeg?auto=compress&cs=tinysrgb&w=2000",
+    text: "Lorem ipsum Amlq",
+    amount: "20000"
+  },
+  {
+    image:
+      "https://images.pexels.com/photos/2884834/pexels-photo-2884834.jpeg?auto=compress&cs=tinysrgb&w=2000",
+    text: "Lorem ipsum Amlq",
+    amount: "20000"
+  }
+];
+function mostWanted() {
+  mostWantedDetails.map((item) => {
+    const mostWantedFormat = `
+  <div class="arrivalItem">
+    <img src="${item.image}" />
+    <h1>Nike Cargos</h1>
+    <p>&dollar;${item.amount}</p>
+    <button class="cart-btn">Add To Cart</button>
+  </div>`;
+    return (mostWantedDiv.innerHTML += mostWantedFormat);
+  });
+}
 window.onload = function () {
   newArrivals();
+  mostWanted();
 };

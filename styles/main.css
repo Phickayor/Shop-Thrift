@@ -11,6 +11,7 @@ body {
 .navBar {
   background-color: #575757;
   position: sticky;
+  top: 0;
   width: 100%;
   padding-top: 30px;
   display: flex;
@@ -73,6 +74,9 @@ input {
   border: none;
   color: white;
 }
+input:focus {
+  outline: none;
+}
 .more {
   padding: 15px;
   align-self: center;
@@ -118,15 +122,18 @@ button {
 }
 
 /* NEW ARRIVALS */
-#newArrivals {
+#newArrivals,
+#mostWanted {
   width: 100%;
   margin-top: 2%;
 }
-#newArrivals h1 {
+#newArrivals h1,
+#mostWanted h1 {
   margin: 2%;
   display: inline-block;
 }
-#seeMoreArrivals {
+#seeMoreArrivals,
+#seeMoreMostWanted {
   display: inline-block;
   float: right;
   color: #ff0000;
@@ -141,7 +148,8 @@ button {
   justify-content: center;
   flex-wrap: wrap;
 }
-#allNewArrivals {
+#allNewArrivals,
+#allMostWanted {
   width: 100%;
   display: flex;
   overflow-x: scroll;
