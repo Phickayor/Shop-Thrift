@@ -51,7 +51,7 @@ body {
   margin-right: 5%;
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
 }
 .search-bar {
   align-self: center;
@@ -134,7 +134,6 @@ button {
 }
 #seeMoreArrivals,
 #seeMoreMostWanted {
-  display: inline-block;
   float: right;
   color: #ff0000;
   cursor: pointer;
@@ -182,4 +181,27 @@ p {
   border: none;
   background-color: #6c3b3b;
   color: white;
+}
+@media screen and (max-width: 770px) {
+  .menu {
+    display: none;
+  }
+  .top-right {
+    width: 75%;
+  }
+  .allContent {
+    margin-right: 0;
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .search-bar {
+    display: none;
+  }
+  .allContent {
+    width: 100%;
+    margin-right: 0;
+    justify-content: flex-end;
+  }
 }
