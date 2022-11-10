@@ -9,7 +9,7 @@ const sliderDetails = [
   },
   {
     image:
-      "https://images.pexels.com/photos/2884834/pexels-photo-2884834.jpeg?auto=compress&cs=tinysrgb&w=2000",
+      "https://images.pexels.com/photos/14344661/pexels-photo-14344661.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
     text: "sit dolor nasj"
   },
   {
@@ -20,6 +20,19 @@ const sliderDetails = [
 ];
 var prev = gid("prev");
 var next = gid("next");
+var open = gid("open");
+var close = gid("close");
+var sideMenu = gid("sideMenu");
+open.addEventListener("click", function () {
+  sideMenu.style.display = "block";
+  open.style.display = "none";
+  close.style.display = "block";
+});
+close.addEventListener("click", function () {
+  sideMenu.style.display = "none";
+  open.style.display = "block";
+  close.style.display = "none";
+});
 var newArrivalsDiv = gid("allNewArrivals");
 var mostWantedDiv = gid("allMostWanted");
 var sliderDiv = gid("slider");
@@ -68,7 +81,7 @@ function slider() {
 </div>`;
   return (sliderDiv.innerHTML = items);
 }
-setInterval(slider, 2000);
+setInterval(slider, 5000);
 
 // New Arrivals
 const newArrivalsDetails = [

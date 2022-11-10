@@ -82,6 +82,36 @@ input:focus {
   align-self: center;
   font-size: 30px;
 }
+#open {
+  cursor: pointer;
+}
+#close {
+  display: none;
+  cursor: pointer;
+}
+.sideMenuItems {
+  position: fixed;
+  transition: 1.5s;
+  height: 100%;
+  top: 0;
+  right: 0;
+  background-color: #6c3b3b;
+  width: 100%;
+  display: none;
+  list-style-type: none;
+}
+.sideMenuItems a {
+  margin-top: 100px;
+  padding: 28px 0px 28px 0px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 25px;
+  color: #fff;
+  display: block;
+}
+.sideMenuItems a:hover {
+  border: 2px solid;
+}
 /* SLIDING IMAGES */
 #slider {
   width: 100%;
@@ -91,10 +121,10 @@ input:focus {
   background-color: #6c3b3b;
 }
 .slider-item {
-  width: 80%;
+  width: 100%;
   /* border: 2px solid; */
   display: flex;
-  transition: 0.5s;
+  transition: 3s;
 }
 .slider-item img {
   width: 60%;
