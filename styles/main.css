@@ -77,6 +77,8 @@ input {
 input:focus {
   outline: none;
 }
+
+/* SIDEMENU CODE */
 .more {
   padding: 15px;
   align-self: center;
@@ -91,7 +93,7 @@ input:focus {
 }
 .sideMenuItems {
   position: fixed;
-  transition: 1.5s;
+  transition: 3s;
   height: 100%;
   top: 0;
   right: 0;
@@ -151,19 +153,22 @@ button {
   padding: 20px;
 }
 
-/* NEW ARRIVALS */
+/* NEW ARRIVALS ,MOST WANTED ,JUST FOR YOU */
 #newArrivals,
-#mostWanted {
+#mostWanted,
+#justForYou {
   width: 100%;
   margin-top: 2%;
 }
 #newArrivals h1,
-#mostWanted h1 {
+#mostWanted h1,
+#justForYou h1 {
   margin: 2%;
   display: inline-block;
 }
 #seeMoreArrivals,
-#seeMoreMostWanted {
+#seeMoreMostWanted,
+#seeMoreJustForYou {
   float: right;
   color: #ff0000;
   cursor: pointer;
@@ -178,7 +183,8 @@ button {
   flex-wrap: wrap;
 }
 #allNewArrivals,
-#allMostWanted {
+#allMostWanted,
+#allJustForYou {
   width: 100%;
   display: flex;
   overflow-x: scroll;

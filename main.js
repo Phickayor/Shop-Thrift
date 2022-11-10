@@ -1,6 +1,10 @@
+//GET ELEMENT BY ID SIMPLIFIED FUNCTION
 function gid(selectedValue) {
   return document.getElementById(selectedValue);
 }
+
+//SLIDER CODE
+//SLIDER DETAILS IN OBJECT
 const sliderDetails = [
   {
     image:
@@ -9,7 +13,7 @@ const sliderDetails = [
   },
   {
     image:
-      "https://images.pexels.com/photos/14344661/pexels-photo-14344661.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
+      "https://drive.google.com/file/d/1K7qGvqNazZVJ7qWDCOjPK62SozY3R7Ya/view?usp=share_link",
     text: "sit dolor nasj"
   },
   {
@@ -18,51 +22,12 @@ const sliderDetails = [
     text: "amet smani chaow"
   }
 ];
-var prev = gid("prev");
-var next = gid("next");
-var open = gid("open");
-var close = gid("close");
-var sideMenu = gid("sideMenu");
-open.addEventListener("click", function () {
-  sideMenu.style.display = "block";
-  open.style.display = "none";
-  close.style.display = "block";
-});
-close.addEventListener("click", function () {
-  sideMenu.style.display = "none";
-  open.style.display = "block";
-  close.style.display = "none";
-});
-var newArrivalsDiv = gid("allNewArrivals");
-var mostWantedDiv = gid("allMostWanted");
+
+//DECLARATION OF NECESSARY VARIABLES
 var sliderDiv = gid("slider");
-next.addEventListener("click", function () {
-  nextSlider();
-});
-prev.addEventListener("click", function () {
-  prevSlider();
-});
-var seeMoreArrivalsOrLessBtn = gid("seeMoreArrivals");
-var seeMoreMostWantedBtn = gid("seeMoreMostWanted");
-// SEE MORE FUNCTION FOR NEW ARRIVALS
-seeMoreArrivalsOrLessBtn.addEventListener("click", function () {
-  if (seeMoreArrivalsOrLessBtn.innerHTML == "See Less") {
-    seeMoreArrivalsOrLessBtn.innerHTML = "See More";
-  } else {
-    seeMoreArrivalsOrLessBtn.innerHTML = "See Less";
-  }
-  newArrivalsDiv.classList.toggle("seeMore");
-});
-// SEE MORE BUTTON FOR MOST WANTED
-seeMoreMostWantedBtn.addEventListener("click", function () {
-  if (seeMoreMostWantedBtn.innerHTML == "See Less") {
-    seeMoreMostWantedBtn.innerHTML = "See More";
-  } else {
-    seeMoreMostWantedBtn.innerHTML = "See Less";
-  }
-  mostWantedDiv.classList.toggle("seeMore");
-});
 var i = 0;
+
+//SLIDER FUNCTION
 function slider() {
   if (i >= 2) {
     i = -1;
@@ -81,9 +46,80 @@ function slider() {
 </div>`;
   return (sliderDiv.innerHTML = items);
 }
+//RUNING SLIDER AFTER 5 SECONDS
 setInterval(slider, 5000);
 
-// New Arrivals
+/*
+var prev = gid("prev");
+var next = gid("next");
+
+next.addEventListener("click", function () {
+  nextSlider();
+});
+
+prev.addEventListener("click", function () {
+  prevSlider();
+});
+*/
+
+//SIDEMENU CODE
+//DECLARATION OF NECESSARY VARIABLES
+var open = gid("open");
+var close = gid("close");
+var sideMenu = gid("sideMenu");
+
+//FUNCTION TO SHOW SIDEMENU
+open.addEventListener("click", function () {
+  sideMenu.style.display = "block";
+  open.style.display = "none";
+  close.style.display = "block";
+});
+
+//FUNCTION TO CLOSE SIDEMENU
+close.addEventListener("click", function () {
+  sideMenu.style.display = "none";
+  open.style.display = "block";
+  close.style.display = "none";
+});
+
+//NEW ARRIVAL SECTION CODE
+var seeMoreArrivalsOrLessBtn = gid("seeMoreArrivals");
+var seeMoreMostWantedBtn = gid("seeMoreMostWanted");
+var seeMoreJustForYouBtn = gid("seeMoreJustForYou");
+// SEE MORE FUNCTION FOR NEW ARRIVALS
+seeMoreArrivalsOrLessBtn.addEventListener("click", function () {
+  if (seeMoreArrivalsOrLessBtn.innerHTML == "See Less") {
+    seeMoreArrivalsOrLessBtn.innerHTML = "See More";
+  } else {
+    seeMoreArrivalsOrLessBtn.innerHTML = "See Less";
+  }
+  newArrivalsDiv.classList.toggle("seeMore");
+});
+// SEE MORE BUTTON FOR MOST WANTED
+seeMoreMostWantedBtn.addEventListener("click", function () {
+  if (seeMoreMostWantedBtn.innerHTML == "See Less") {
+    seeMoreMostWantedBtn.innerHTML = "See More";
+  } else {
+    seeMoreMostWantedBtn.innerHTML = "See Less";
+  }
+  mostWantedDiv.classList.toggle("seeMore");
+});
+
+// SEE MORE BUTTON FOR JUST FOR YOU
+seeMoreJustForYouBtn.addEventListener("click", function () {
+  if (seeMoreJustForYouBtn.innerHTML == "See Less") {
+    seeMoreJustForYouBtn.innerHTML = "See More";
+  } else {
+    seeMoreJustForYouBtn.innerHTML = "See Less";
+  }
+  justForYouDiv.classList.toggle("seeMore");
+});
+
+// NEW ARRIVALS
+//DECLARATION OF NECESSARY VARIABLES
+var newArrivalsDiv = gid("allNewArrivals");
+
+//NEW ARRIVALS DETAILS IN OBJECT
 const newArrivalsDetails = [
   {
     image:
@@ -140,6 +176,8 @@ const newArrivalsDetails = [
     amount: "20000"
   }
 ];
+
+//NEW ARRIVALS FUNCTION
 function newArrivals() {
   newArrivalsDetails.map((item) => {
     const newArrivalsFormat = `
@@ -154,6 +192,10 @@ function newArrivals() {
 }
 
 //MOST WANTED
+//DECLARATION OF NECESSARY VARIABLES
+var mostWantedDiv = gid("allMostWanted");
+
+//MOST WANTED DETAILS IN OBJECT
 const mostWantedDetails = [
   {
     image:
@@ -210,6 +252,8 @@ const mostWantedDetails = [
     amount: "20000"
   }
 ];
+
+//MOST WANTED FUNCTION
 function mostWanted() {
   mostWantedDetails.map((item) => {
     const mostWantedFormat = `
@@ -222,7 +266,85 @@ function mostWanted() {
     return (mostWantedDiv.innerHTML += mostWantedFormat);
   });
 }
+
+//JUST FOR YOU
+//DECLARATION OF NECESSARY VARIABLES
+var justForYouDiv = gid("allJustForYou");
+
+//JUST FOR YOU DETAILS IN OBJECT
+const justForYouDetails = [
+  {
+    image:
+      "https://images.pexels.com/photos/2884834/pexels-photo-2884834.jpeg?auto=compress&cs=tinysrgb&w=2000",
+    text: "Lorem ipsum Amlq",
+    amount: "20000"
+  },
+  {
+    image:
+      "https://images.pexels.com/photos/2884834/pexels-photo-2884834.jpeg?auto=compress&cs=tinysrgb&w=2000",
+    text: "Lorem ipsum Amlq",
+    amount: "20000"
+  },
+  {
+    image:
+      "https://images.pexels.com/photos/2884834/pexels-photo-2884834.jpeg?auto=compress&cs=tinysrgb&w=2000",
+    text: "Lorem ipsum Amlq",
+    amount: "20000"
+  },
+  {
+    image:
+      "https://images.pexels.com/photos/2884834/pexels-photo-2884834.jpeg?auto=compress&cs=tinysrgb&w=2000",
+    text: "Lorem ipsum Amlq",
+    amount: "20000"
+  },
+  {
+    image:
+      "https://images.pexels.com/photos/2884834/pexels-photo-2884834.jpeg?auto=compress&cs=tinysrgb&w=2000",
+    text: "Lorem ipsum Amlq",
+    amount: "20000"
+  },
+  {
+    image:
+      "https://images.pexels.com/photos/2884834/pexels-photo-2884834.jpeg?auto=compress&cs=tinysrgb&w=2000",
+    text: "Lorem ipsum Amlq",
+    amount: "20000"
+  },
+  {
+    image:
+      "https://images.pexels.com/photos/2884834/pexels-photo-2884834.jpeg?auto=compress&cs=tinysrgb&w=2000",
+    text: "Lorem ipsum Amlq",
+    amount: "20000"
+  },
+  {
+    image:
+      "https://images.pexels.com/photos/2884834/pexels-photo-2884834.jpeg?auto=compress&cs=tinysrgb&w=2000",
+    text: "Lorem ipsum Amlq",
+    amount: "20000"
+  },
+  {
+    image:
+      "https://images.pexels.com/photos/2884834/pexels-photo-2884834.jpeg?auto=compress&cs=tinysrgb&w=2000",
+    text: "Lorem ipsum Amlq",
+    amount: "20000"
+  }
+];
+
+//JUST FOR YOU FUNCTION
+function justForYou() {
+  justForYouDetails.map((item) => {
+    const justForYouFormat = `
+  <div class="arrivalItem">
+    <img src="${item.image}" />
+    <h1>Nike Cargos</h1>
+    <p>&dollar;${item.amount}</p>
+    <button class="cart-btn">Add To Cart</button>
+  </div>`;
+    return (justForYouDiv.innerHTML += justForYouFormat);
+  });
+}
+
 window.onload = function () {
   newArrivals();
   mostWanted();
+  justForYou();
 };
