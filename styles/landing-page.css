@@ -24,7 +24,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 80%;
+  height: 90%;
   overflow-y: scroll;
 }
 .welcome-text h2 {
@@ -45,7 +45,6 @@ body {
   color: #323232;
   font-size: 100%;
 }
-
 .shop-btn:hover {
   color: #fff;
   background: none;
