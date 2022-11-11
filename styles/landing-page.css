@@ -1,8 +1,12 @@
 body {
   background-color: #323232;
+  height: 100%;
+  width: 100%;
+  position: fixed;
 }
 .background-image {
   position: absolute;
+  object-fit: cover;
   top: 0;
   left: 0;
   width: 100%;
@@ -13,46 +17,37 @@ body {
   z-index: -1;
 }
 .logo {
-  width: 300px;
-  padding: 50px;
+  margin-top: 2%;
+  width: 200px;
 }
 .main {
   display: flex;
-  flex-wrap: wrap;
   flex-direction: column;
-  align-items: center;
-  position: absolute;
-  left: 0;
-  bottom: 15%;
-  width: 100%;
-}
-.welcome-text {
-  width: 70%;
-  text-align: center;
+  justify-content: center;
+  height: 80%;
+  overflow-y: scroll;
 }
 .welcome-text h2 {
-  font-size: 50px;
+  text-align: center;
   font-family: roboto;
   color: white;
+  font-size: 60px;
+}
+.btnDiv {
+  display: flex;
+  justify-content: center;
 }
 .shop-btn {
-  width: 50%;
+  width: 100%;
   border: none;
   border-radius: 40px;
   padding: 30px;
   color: #323232;
   font-size: 100%;
 }
+
 .shop-btn:hover {
   color: #fff;
   background: none;
   border: 2px solid #fff;
-}
-@media screen and (max-width: 574px) {
-  .main {
-    position: relative;
-  }
-  .shop-btn {
-    width: 100%;
-  }
 }
