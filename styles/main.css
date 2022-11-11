@@ -16,10 +16,13 @@ body {
   padding-top: 30px;
   display: flex;
   flex-wrap: wrap;
-  z-index: 1;
+  z-index: 2;
 }
 .logo {
   width: 25%;
+}
+img {
+  z-index: 0;
 }
 .logo img {
   margin-left: 10%;
@@ -101,7 +104,7 @@ input:focus {
   width: 250px;
   display: none;
   list-style-type: none;
-  z-index: 10;
+  z-index: 1;
 }
 #sideMenu a {
   margin-top: 100px;
