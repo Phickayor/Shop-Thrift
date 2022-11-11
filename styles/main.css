@@ -101,6 +101,7 @@ input:focus {
   width: 250px;
   display: none;
   list-style-type: none;
+  z-index: 10;
 }
 #sideMenu a {
   margin-top: 100px;
