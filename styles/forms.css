@@ -1,0 +1,115 @@
+* {
+  background-color: black;
+  color: white;
+}
+.header {
+  width: 100%;
+  font-size: 20px;
+  display: flex;
+  margin: 5%;
+  margin-left: 0;
+}
+.back {
+  padding: 35px;
+  border-radius: 20px;
+  border: 2px solid;
+  align-self: center;
+  margin-right: 5%;
+}
+p {
+  font-size: 20px;
+}
+.signUpAlt,
+.signInAlt {
+  display: flex;
+  justify-content: center;
+}
+.signUpAlt div,
+.signInAlt div {
+  border: 2px solid;
+  display: flex;
+  width: 100%;
+  padding: 30px;
+  margin: 20px;
+  font-size: 50px;
+  justify-content: center;
+  border-radius: 20px;
+}
+.signUpAlt div:hover,
+.signInAlt div:hover {
+  cursor: pointer;
+  background-color: aliceblue;
+  color: black;
+}
+form {
+  width: 100%;
+}
+label,
+input {
+  display: block;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 20px;
+  font-family: verdana;
+}
+input {
+  border-radius: 25px;
+  border: none;
+  border-bottom: 2px solid;
+  margin-bottom: 5%;
+}
+input:focus {
+  outline: none;
+  border-bottom: 1px solid transparent;
+  border-image: linear-gradient(to right, purple, violet);
+  border-image-slice: 1;
+}
+button {
+  padding: 20px;
+  width: 100%;
+  border-radius: 25px;
+  font-size: x-large;
+  background-image: linear-gradient(to right, purple, violet);
+}
+button:hover {
+  background-image: none;
+  background-color: aliceblue;
+  cursor: pointer;
+  color: black;
+}
+
+p {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #ccc;
+}
+a {
+  color: white;
+  text-decoration: none;
+  font-family: sans-serif;
+}
+a:hover {
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    display: flex;
+    justify-content: center;
+  }
+  .signUp,
+  .signIn {
+    position: absolute;
+    width: 60%;
+    top: 5%;
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    padding-left: 100px;
+    padding-right: 100px;
+    height: 90%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: auto;
+  }
+}

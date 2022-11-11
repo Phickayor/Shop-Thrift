@@ -91,18 +91,18 @@ input:focus {
   display: none;
   cursor: pointer;
 }
-.sideMenuItems {
+#sideMenu {
   position: fixed;
   transition: 3s;
   height: 100%;
   top: 0;
   right: 0;
   background-color: #6c3b3b;
-  width: 100%;
+  width: 250px;
   display: none;
   list-style-type: none;
 }
-.sideMenuItems a {
+#sideMenu a {
   margin-top: 100px;
   padding: 28px 0px 28px 0px;
   text-align: center;
@@ -111,8 +111,8 @@ input:focus {
   color: #fff;
   display: block;
 }
-.sideMenuItems a:hover {
-  border: 2px solid;
+#sideMenu a:hover {
+  border: 2px solid white;
 }
 /* SLIDING IMAGES */
 #slider {
@@ -217,6 +217,17 @@ p {
   border: none;
   background-color: #6c3b3b;
   color: white;
+}
+
+.footer {
+  background-color: #575757;
+}
+.footer-sections {
+  display: flex;
+  justify-content: center;
+}
+.footer-sections div ul {
+  list-style-type: none;
 }
 @media screen and (max-width: 770px) {
   .menu {
