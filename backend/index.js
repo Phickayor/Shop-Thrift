@@ -18,7 +18,6 @@ app.post("/signUp", function (req, res) {
   var email = req.body.email;
   var fname = req.body.fname;
   var password = req.body.pswd;
-
   MongoClient.connect(url, function (err, db) {
     if (err) throw err;
     var dbo = db.db("forms");
@@ -27,11 +26,25 @@ app.post("/signUp", function (req, res) {
       email: email,
       password: password
     };
-    dbo.collection("signedUp").insertOne(myDetails, function (err, res) {
-      if (err) throw err;
-      console.log("Added to database");
-      db.close();
-    });
+    dbo
+      .collection("signedUp")
+      .find({})
+      .toArray(function (err, result) {
+        if (err) throw err;
+        var allMails = [];
+        result.map((eachOfThem) => {
+          allMails.push(eachOfThem.email);
+        });
+        console.log(allMails);
+        if (allMails.indexOf(email) === -1) {
+          dbo.collection("signedUp").insertOne(myDetails, function (err, res) {
+            if (err) throw err;
+            console.log("new user details added");
+          });
+        } else {
+          console.log("You already have an account Sign In");
+        }
+      });
   });
   res.end();
 });
