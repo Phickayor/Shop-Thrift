@@ -13,7 +13,7 @@ const sliderDetails = [
   },
   {
     image:
-      "https://drive.google.com/file/d/1K7qGvqNazZVJ7qWDCOjPK62SozY3R7Ya/view?usp=share_link",
+      "https://images.pexels.com/photos/9558581/pexels-photo-9558581.jpeg?auto=compress&cs=tinysrgb&w=2000",
     text: "sit dolor nasj"
   },
   {
@@ -342,6 +342,32 @@ function justForYou() {
     return (justForYouDiv.innerHTML += justForYouFormat);
   });
 }
+const largeScreenMenu = `<ul>
+<a><li>Sign in/Sign up</li></a>
+<a href="./categories.html"><li>Light Mode</li></a>
+<a><li>Settings</li></a>
+</ul>`;
+
+const mediumScreenMenu = `<ul>
+<a><li>About</li></a>
+<a href="./categories.html" class="active"><li>Categories</li></a>
+<a><li>Help</li></a>
+<a><li>Cart</li></a>
+<a><li>Sign in/Sign up</li></a>
+<a href="./categories.html"><li>Light Mode</li></a>
+<a><li>Settings</li></a>
+</ul>`;
+
+const smallScreenMenu = `<ul>
+<a><li>About</li></a>
+<a href="./categories.html" class="active"><li>Categories</li></a>
+<a><li>Help</li></a>
+<a><li>Cart</li></a>
+<a><li>Search</li></a>
+<a><li>Sign in/Sign up</li></a>
+<a href="./categories.html"><li>Light Mode</li></a>
+<a><li>Settings</li></a>
+</ul>`;
 
 window.onload = function () {
   newArrivals();

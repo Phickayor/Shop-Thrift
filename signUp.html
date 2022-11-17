@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="google-signin-client_id"
+      content="848535236093-bt543r4ast3gioo10op87i1sb3i2fciu.apps.googleusercontent.com"
+    />
     <link rel="stylesheet" href="./styles/forms.css" />
     <link
       rel="stylesheet"
@@ -21,10 +25,12 @@
       </div>
       <p>Sign up with one of the following options.</p>
       <div class="signUpAlt">
-        <div class="fa fa-google"></div>
-        <div class="fa fa-apple"></div>
+        <!-- <div class="g-signin2" data-onsuccess="onSignIn"></div> -->
+        <!-- <div class="fa fa-google"></div>
+        <div class="fa fa-apple"></div> -->
       </div>
-      <form>
+      <div id="errorSection"></div>
+      <form action="http://localhost:8080/signUp" method="post">
         <label>Name</label>
         <input
           type="text"
@@ -37,6 +43,7 @@
         <label>Password</label>
         <input
           type="password"
+          id="pswd"
           name="pswd"
           placeholder="Pick a strong password"
           required
@@ -44,6 +51,7 @@
         <label>Confirm Password</label>
         <input
           type="password"
+          id="pswdTwo"
           name="pswd2"
           placeholder="Repeat above password"
           required
@@ -54,5 +62,9 @@
         Already have an account? <b><a href="./signIn.html">Log in</a></b>
       </p>
     </div>
+    <script src="./form.js"></script>
+    <!-- <script src="https://apis.google.com/js/platform.js" async defer>
+    </script>
+    -->
   </body>
 </html>

@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles/forms.css" />
+    <meta
+      name="google-signin-client_id"
+      content="848535236093-bt543r4ast3gioo10op87i1sb3i2fciu.apps.googleusercontent.com"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -12,6 +16,12 @@
     <title>Shop Thrift| Sign in</title>
   </head>
   <body>
+    <div
+      id="g_id_onload"
+      data-client_id="848535236093-bt543r4ast3gioo10op87i1sb3i2fciu"
+      data-auto_prompt="false"
+    ></div>
+
     <div class="signIn">
       <div class="header">
         <a href="./main.html" class="back">
@@ -20,11 +30,22 @@
         <h1>Sign In</h1>
       </div>
       <p>Sign up with one of the following options.</p>
+      <!--<div
+        class="g_id_signin"
+        data-type="standard"
+        data-size="large"
+        data-theme="filled_blue"
+        data-text="sign_in_with"
+        data-shape="pill"
+        data-logo_alignment="center"
+      ></div>
       <div class="signInAlt">
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+
         <div class="fa fa-google"></div>
         <div class="fa fa-apple"></div>
-      </div>
-      <form>
+      </div> -->
+      <form action="http://localhost:8080/signIn" method="post">
         <label>Email</label>
         <input type="email" name="email" placeholder="Your Email" required />
         <label>Password</label>
@@ -40,5 +61,23 @@
         Don't have an account? <b><a href="./signUp.html">Sign Up</a></b>
       </p>
     </div>
+    <!-- <script src="https://accounts.google.com/gsi/client" async defer></script> -->
+    <script src="./form.js"></script>
+    <!-- <script>
+      function handleCredentialResponse(response) {
+        console.log("Encoded JWT ID token: " + response.credential);
+      }
+      window.onload = function () {
+        google.accounts.id.initialize({
+          client_id: "848535236093-bt543r4ast3gioo10op87i1sb3i2fciu",
+          callback: handleCredentialResponse
+        });
+        google.accounts.id.renderButton(
+          document.getElementById("buttonDiv"),
+          { theme: "outline", size: "large" } // customization attributes
+        );
+        google.accounts.id.prompt(); // also display the One Tap dialog
+      };
+    </script> -->
   </body>
 </html>
