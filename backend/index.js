@@ -40,19 +40,20 @@ app.post("/signUp", function (req, res) {
           dbo.collection("signedUp").insertOne(myDetails, function (err, res) {
             if (err) throw err;
             console.log("new user details added");
+            res.redirect("http://localhost:5501/main.html");
           });
         } else {
           console.log("You already have an account Sign In");
+          res.redirect("http://localhost:5501/signIn.html");
         }
       });
   });
-  res.end();
 });
 
 app.post("/signIn", function (req, res) {
   var email = req.body.email;
   var password = req.body.pswd;
-  console.log(email + password);
+
   res.end();
 });
 
