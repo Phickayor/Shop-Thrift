@@ -53,8 +53,28 @@ app.post("/signUp", function (req, res) {
 app.post("/signIn", function (req, res) {
   var email = req.body.email;
   var password = req.body.pswd;
-
-  res.end();
+  var query = { email: email, password: password };
+  MongoClient.connect(url, function (err, db) {
+    var dbo = db.db("forms");
+    if (err) throw err;
+    dbo
+      .collection("signedUp")
+      .find({}, { projection: { _id: 0, name: 0 } })
+      .toArray(function (err, result) {
+        var all = result;
+        for (i = 0; i < all.length; i++) {
+          if (
+            query.email === all[i].email &&
+            query.password === all[i].password
+          ) {
+            console.log("Hoooooooray");
+            res.redirect("http://localhost:5501/main.html");
+          } else {
+            return false;
+          }
+        }
+      });
+  });
 });
 
 app.listen(8080, () => {
