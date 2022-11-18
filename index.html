@@ -5,27 +5,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SHOP THRIFT</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles/landing-page.css" />
   </head>
-  <link rel="stylesheet" href="./styles/landing-page.css" />
   <body>
     <img
       class="background-image"
       src="https://images.pexels.com/photos/5926240/pexels-photo-5926240.jpeg?auto=compress&cs=tinysrgb&w=2000"
     />
     <header>
-      <img src="./logo.png" alt="logo" class="logo" />
+      <img src="./logo.png" alt="logo" data-aos="fade-left" class="logo" />
     </header>
     <section class="main">
       <div class="welcome-text">
-        <div>
+        <div data-aos="zoom-out">
           <h2>SHOP FOR THE BEST QUALITY AT IT'S LOWEST PRICES</h2>
         </div>
         <div class="btnDiv">
           <a href="./main.html"
-            ><button class="shop-btn">START SHOPPING</button></a
+            ><button class="shop-btn" data-aos="zoom-in">
+              START SHOPPING
+            </button></a
           >
         </div>
       </div>
     </section>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: "1000",
+        delay: "300",
+        easing: "ease"
+      });
+    </script>
   </body>
 </html>

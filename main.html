@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link rel="stylesheet" href="./styles/main.css" />
     <link
       rel="stylesheet"
@@ -49,7 +50,7 @@
     </ul>
 
     <!-- SLIDER SECTION -->
-    <div id="slider">
+    <div id="slider" data-aos="fade-down">
       <div class="slider-item">
         <a id="prev">&#8810;</a>
         <img
@@ -64,21 +65,21 @@
     </div>
 
     <!-- NEW ARRIVALS SECTION -->
-    <div id="newArrivals">
+    <div id="newArrivals" data-aos="fade-up">
       <h1>New Arrivals</h1>
       <a id="seeMoreArrivals">See More</a>
       <div id="allNewArrivals"></div>
     </div>
 
     <!-- MOST WANTED  SECTION -->
-    <div id="mostWanted">
+    <div id="mostWanted" data-aos="fade-left">
       <h1>Most Wanted</h1>
       <a id="seeMoreMostWanted">See More</a>
       <div id="allMostWanted"></div>
     </div>
 
     <!-- JUST FOR YOU SECTION -->
-    <div id="justForYou">
+    <div id="justForYou" data-aos="fade-up">
       <h1>Just For You</h1>
       <a id="seeMoreJustForYou">See More</a>
       <div id="allJustForYou"></div>
@@ -105,6 +106,15 @@
         </div>
       </div>
     </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: "800",
+        delay: "0",
+        easing: "ease"
+      });
+    </script>
     <script src="./main.js"></script>
   </body>
 </html>

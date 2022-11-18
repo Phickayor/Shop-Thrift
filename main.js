@@ -33,7 +33,7 @@ function slider() {
     i = -1;
   }
   i += 1;
-  const items = `<div class="slider-item">
+  const items = `<div class="slider-item data-aos="fade-right"">
   <a id="prev">&#8810;</a>
   <img
     src="${sliderDetails[i].image}"
