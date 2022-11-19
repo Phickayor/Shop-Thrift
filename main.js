@@ -67,10 +67,44 @@ prev.addEventListener("click", function () {
 var open = gid("open");
 var close = gid("close");
 var sideMenu = gid("sideMenu");
+var allSections = gid("allSections");
+//Menu contents
+const largeScreenMenu = `
+<a href="signIn.html"><li>Sign in/Sign up</li></a>
+<a><li>Light Mode</li></a>
+<a href="settings.html"><li>Settings</li></a> `;
+
+const mediumScreenMenu = `
+<a><li>About</li></a>
+<a href="./categories.html" class="active"><li>Categories</li></a>
+<a><li>Help</li></a>
+<a href="cart.html"><li>Cart</li></a>
+<a><li>Sign in/Sign up</li></a>
+<a href="./categories.html"><li>Light Mode</li></a>
+<a><li>Settings</li></a>
+`;
+
+const smallScreenMenu = `<a><li>Home</li></a>
+<a><li>About</li></a>
+<a><li>Categories</li></a>
+<a><li>Help</li></a>
+<a><li>Cart</li></a>
+<a><li>Search</li></a>
+<a><li>Sign in/Sign up</li></a>
+<a><li>Light Mode</li></a>
+<a><li>Settings</li></a>`;
 
 //FUNCTION TO SHOW SIDEMENU
 open.addEventListener("click", function () {
+  if (screen.width <= "575") {
+    sideMenu.innerHTML = smallScreenMenu;
+  } else if (screen.width <= "770") {
+    sideMenu.innerHTML = mediumScreenMenu;
+  } else {
+    sideMenu.innerHTML = largeScreenMenu;
+  }
   sideMenu.style.display = "block";
+  allSections.style.width = "70%";
   open.style.display = "none";
   close.style.display = "block";
 });
@@ -79,6 +113,7 @@ open.addEventListener("click", function () {
 close.addEventListener("click", function () {
   sideMenu.style.display = "none";
   open.style.display = "block";
+  allSections.style.width = "100%";
   close.style.display = "none";
 });
 
@@ -342,32 +377,6 @@ function justForYou() {
     return (justForYouDiv.innerHTML += justForYouFormat);
   });
 }
-const largeScreenMenu = `<ul>
-<a><li>Sign in/Sign up</li></a>
-<a href="./categories.html"><li>Light Mode</li></a>
-<a><li>Settings</li></a>
-</ul>`;
-
-const mediumScreenMenu = `<ul>
-<a><li>About</li></a>
-<a href="./categories.html" class="active"><li>Categories</li></a>
-<a><li>Help</li></a>
-<a><li>Cart</li></a>
-<a><li>Sign in/Sign up</li></a>
-<a href="./categories.html"><li>Light Mode</li></a>
-<a><li>Settings</li></a>
-</ul>`;
-
-const smallScreenMenu = `<ul>
-<a><li>About</li></a>
-<a href="./categories.html" class="active"><li>Categories</li></a>
-<a><li>Help</li></a>
-<a><li>Cart</li></a>
-<a><li>Search</li></a>
-<a><li>Sign in/Sign up</li></a>
-<a href="./categories.html"><li>Light Mode</li></a>
-<a><li>Settings</li></a>
-</ul>`;
 
 window.onload = function () {
   newArrivals();
