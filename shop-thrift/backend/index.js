@@ -16,7 +16,7 @@ var url =
 
 app.post("/signUp", function (req, res) {
   var email = req.body.email;
-  var fname = req.body.fname;
+  var fname = req.body.name;
   var password = req.body.pswd;
   MongoClient.connect(url, function (err, db) {
     if (err) throw err;
@@ -40,17 +40,18 @@ app.post("/signUp", function (req, res) {
           dbo.collection("signedUp").insertOne(myDetails, function (err, res) {
             if (err) throw err;
             console.log("new user details added");
-            res.redirect("http://localhost:5501/signIn.html");
+            res.redirect("http://localhost:3000/signIn.html");
           });
         } else {
           console.log("You already have an account Sign In");
-          res.redirect("http://localhost:5501/signIn.html");
+          res.redirect("http://localhost:3000/signIn.html");
         }
       });
   });
 });
 
 app.post("/signIn", function (req, res) {
+  var msg;
   var email = req.body.email;
   var password = req.body.pswd;
   var query = { email: email, password: password };
@@ -68,15 +69,14 @@ app.post("/signIn", function (req, res) {
             query.password === all[i].password
           ) {
             console.log("Hoooooooray");
-            res.redirect("http://localhost:5501//main.html");
+            res.redirect("http://localhost:3000/");
           } else {
-            console.log("wrong email or password")
+            msg = "Wrong password or mail"
           }
         }
       });
   });
 });
-
 app.listen(8080, () => {
   console.log(`Server listening on 8080`);
 });

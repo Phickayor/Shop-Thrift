@@ -2,10 +2,16 @@ import React from 'react'
 import Logo from '../images/shop_thrift_logo.png'
 import Link from 'next/link'
 function Login() {
+    fetch('http:localhost:8080/api').then(function (response) {
+        console.log(response.json())
+    }).then(function (data) {
+        console.log(data)
+    })
     return (
-        <div className='flex pb-5'>
+        <div className='flex'>
+            <img src={Logo} alt="Shop Thrift" className='absolute m-10 text-3xl font-semibold font-serif text-slate-700' />
+
             <div className='w-full h-screen lg:w-1/2 flex flex-col justify-center overflow-y-auto'>
-                <img src={Logo} alt="Shop Thrift" className='sticky m-10 text-3xl font-semibold font-serif text-slate-700' />
 
                 <div className='container mx-auto lg:w-3/5 w-4/5'>
                     <h1 className='text-4xl font-semibold'>Login</h1>

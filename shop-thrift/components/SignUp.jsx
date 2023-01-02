@@ -3,14 +3,14 @@ import Logo from '../images/shop_thrift_logo.png'
 import Link from 'next/link'
 function SignUp() {
     return (
-        <div className='flex pb-5'>
-            <div className='w-full h-screen lg:w-1/2 overflow-y-auto'>
-                <img src={Logo} alt="Shop Thrift" className='sticky m-10 text-3xl font-semibold font-serif text-slate-700' />
+        <div className='flex'>
+            <div className='w-full h-screen lg:w-1/2 lg:flex flex-col justify-center overflow-y-auto'>
+                <img src={Logo} alt="Shop Thrift" className='lg:absolute sticky m-10 lg:top-0 text-3xl font-semibold font-serif text-slate-700' />
 
                 <div className='container mx-auto lg:w-3/5 w-4/5'>
                     <h1 className='text-4xl font-semibold'>Sign Up</h1>
                     <p className='text-lg font-semibold mt-2 text-violet-600 mb-10 font-mono'>Create an account with us today</p>
-                    <form action="http://localhost:8080/signIn" method="post" className='space-y-5'>
+                    <form action="http://localhost:8080/signUp" method="post" className='space-y-5'>
                         <label className='font-semibold text-slate-800'>Name<i className='text-violet-600 text-lg font-bold'>*</i></label>
                         <input className='rounded-xl block border w-full p-2' type="text" name="name" placeholder="Your Name" required />
                         <label className='block font-semibold text-slate-800'>Email<i className='text-violet-600 text-lg font-bold'>*</i></label>
