@@ -1,13 +1,15 @@
 import React from 'react'
 import Logo from '../images/shop_thrift_logo.png'
+import Link from 'next/link'
 function Login() {
     return (
-        <div className='flex'>
-            <img src={Logo} alt="Shop Thrift" className='absolute m-10 text-3xl font-semibold font-serif text-slate-700' />
-            <div className='w-full h-screen lg:w-1/2 flex flex-col justify-center border-2 '>
+        <div className='flex pb-5'>
+            <div className='w-full h-screen lg:w-1/2 flex flex-col justify-center overflow-y-auto'>
+                <img src={Logo} alt="Shop Thrift" className='sticky m-10 text-3xl font-semibold font-serif text-slate-700' />
+
                 <div className='container mx-auto lg:w-3/5 w-4/5'>
                     <h1 className='text-4xl font-semibold'>Login</h1>
-                    <p className='text-lg font-semibold mt-2 text-violet-600 mb-10'>Welcome back we are glad to see you again</p>
+                    <p className='text-lg font-semibold mt-2 text-violet-600 mb-10 font-mono'>Welcome back we are glad to see you again</p>
                     <form action="http://localhost:8080/signIn" method="post" className='space-y-5'>
                         <label className='font-semibold text-slate-800'>Email<i className='text-violet-600 text-lg font-bold'>*</i></label>
                         <input className='rounded-xl block border w-full p-2' type="email" name="email" placeholder="Your Email" required />
@@ -24,11 +26,11 @@ function Login() {
                                 <input type="checkbox" className='bg-violet-600' />
                                 <label className=' text-slate-700'>&nbsp; Remember me</label>
                             </div>
-                            <label className='inline-block w-4/12 text-center text-violet-600'>Forgot password?</label>
+                            <Link href="/forgetpassword" className='inline-block w-4/12 text-center text-violet-600'>Forgot password?</Link>
                         </div>
                         <button className='rounded-xl text-center bg-violet-500 text-white w-full mt-10 p-3 font-bold text-xl'>Login</button>
                         <div className='mt-10'>
-                            <p className='text-md inline'>Don't have an account?</p><p className='inline text-violet-600 font-semibold'>&nbsp; Create account</p>
+                            <p className='text-md inline'>Don't have an account?</p><Link href="/signup" className='inline text-violet-600 font-semibold'>&nbsp; Create account</Link>
                         </div>
                     </form>
                 </div>

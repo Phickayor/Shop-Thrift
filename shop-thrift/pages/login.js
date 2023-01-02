@@ -1,10 +1,10 @@
 import React from 'react'
 import Login from '../components/Login'
 
-function forms() {
+function login() {
     return (
         <Login />
     )
 }
 
-export default forms
+export default login
