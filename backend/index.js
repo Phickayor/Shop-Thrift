@@ -40,11 +40,11 @@ app.post("/signUp", function (req, res) {
           dbo.collection("signedUp").insertOne(myDetails, function (err, res) {
             if (err) throw err;
             console.log("new user details added");
-            res.redirect("https://shopthrift.netlify.app/main.html");
+            res.redirect("http://localhost:5501/signIn.html");
           });
         } else {
           console.log("You already have an account Sign In");
-          res.redirect("https://shopthrift.netlify.app/signIn.html");
+          res.redirect("http://localhost:5501/signIn.html");
         }
       });
   });
@@ -68,9 +68,9 @@ app.post("/signIn", function (req, res) {
             query.password === all[i].password
           ) {
             console.log("Hoooooooray");
-            res.redirect("https://shopthrift.netlify.app/main.html");
+            res.redirect("http://localhost:5501//main.html");
           } else {
-            return false;
+            console.log("wrong email or password")
           }
         }
       });
