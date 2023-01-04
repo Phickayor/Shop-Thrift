@@ -1,30 +1,57 @@
-import React from 'react'
+import React, { useState, useRef } from 'react'
 import Logo from '../images/shop_thrift_logo.png'
 import Link from 'next/link'
+// import Image from 'next/image'
 function Login() {
-    fetch('http:localhost:8080/api').then(function (response) {
-        console.log(response.json())
-    }).then(function (data) {
-        console.log(data)
-    })
+    const emailValue = useRef(null)
+    const pswdValue = useRef(null)
+    const [email, setEmail] = useState("");
+    const [pswd, setPswd] = useState("");
+    function HandleSubmit(e) {
+        e.preventDefault()
+        setEmail(emailValue.current.value)
+        setPswd(pswdValue.current.value)
+        fetch("http://localhost:8080/signIn", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ email, pswd })
+        });
+        fetch('http://localhost:8080/signIn').then(function (response) {
+            return response.json()
+        }).then(function (data) {
+            console.log(data)
+        })
+    }
     return (
         <div className='flex'>
-            <img src={Logo} alt="Shop Thrift" className='absolute m-10 text-3xl font-semibold font-serif text-slate-700' />
+            {/* <img src={Logo} alt="Shop Thrift" className='absolute m-10 text-3xl font-semibold font-serif text-slate-700' /> */}
 
-            <div className='w-full h-screen lg:w-1/2 flex flex-col justify-center overflow-y-auto'>
-
+            <div className='w-full h-screen lg:w-1/2 flex flex-col overflow-y-auto'>
+                <div className=' sticky top-0 backdrop-blur-lg'>
+                    <h1 className=' mx-10 my-10 text-3xl font-semibold font-serif text-slate-700'>Shop Thrift</h1>
+                </div>
                 <div className='container mx-auto lg:w-3/5 w-4/5'>
                     <h1 className='text-4xl font-semibold'>Login</h1>
                     <p className='text-lg font-semibold mt-2 text-violet-600 mb-10 font-mono'>Welcome back we are glad to see you again</p>
-                    <form action="http://localhost:8080/signIn" method="post" className='space-y-5'>
+                    <form onSubmit={HandleSubmit} method="post" className='space-y-5'>
                         <label className='font-semibold text-slate-800'>Email<i className='text-violet-600 text-lg font-bold'>*</i></label>
-                        <input className='rounded-xl block border w-full p-2' type="email" name="email" placeholder="Your Email" required />
+                        <input
+                            className='rounded-xl block border w-full p-2'
+                            type="email"
+                            name="email"
+                            placeholder="Your Email"
+                            ref={emailValue}
+                            required
+                        />
                         <label className='block font-semibold text-slate-800'>Password<i className='text-violet-600 text-lg font-bold'>*</i></label>
                         <input
                             className='block rounded-xl border w-full p-2'
                             type="password"
                             name="pswd"
                             placeholder="Input your password..."
+                            ref={pswdValue}
                             required
                         />
                         <div className='flex w-full font-semibold'>

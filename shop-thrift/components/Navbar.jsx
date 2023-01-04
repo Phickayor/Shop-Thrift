@@ -12,14 +12,14 @@ function Navbar() {
     const [width, setWidth] = useState("0")
     const [padding, setPadding] = useState("0")
     function SidemenuBar(e) {
-        if (width === "20rem") {
+        if (width === "15rem") {
             setWidth("0")
             e.currentTarget.classList.toggle('px-6');
             setPadding("0")
             setSideMenuIcon(menu)
         }
         else {
-            setWidth("20rem")
+            setWidth("15rem")
             e.currentTarget.classList.toggle('px-6');
             setSideMenuIcon(close)
             setPadding("5px")
@@ -29,7 +29,7 @@ function Navbar() {
     return (
         <div className='bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500'>
             <div className='h-[12vh] flex justify-between sticky w-full backdrop-blur-lg z-20 '>
-                <img src={Logo} alt="Shop Thrift" className=' px-5 py-5 text-3xl lg:w-3/12  font-semibold font-serif text-slate-100' />
+                <h1 className=' px-5 py-5 text-3xl lg:w-3/12  font-semibold font-serif text-slate-100'>Shop Thrift</h1>
                 <div className='hidden lg:flex flex-col justify-center  w-6/12'>
                     <ul className='flex space-x-10 text-slate-100 justify-center font-semibold font-mono text-xl'>
                         <a href="#home"><li>Home</li></a>
@@ -61,7 +61,7 @@ function Navbar() {
                 // transition: "1.5s",
                 width: width,
                 padding: padding
-            }} className='bg-purple-50 duration-1000 text-purple-900 dark:bg-slate-700 dark:text-white h-[88vh] flex flex-col rounded-[20%] overflow-y-scroll text-2xl font-mono font-semibold  space-y-10 w-80 text-center absolute right-0 z-30'>
+            }} className='bg-purple-50 duration-1000 text-purple-900 dark:bg-slate-700 dark:text-white h-[88vh] flex flex-col rounded-l-[20%] overflow-y-scroll text-2xl font-mono font-semibold  space-y-10 w-80 text-center absolute right-0 z-30'>
                 <li className='hover:border p-5 rounded-2xl hover:text-white hover:bg-gradient-to-r hover:from-indigo-500 hover:via-purple-500 hover:to-pink-500'>HOME</li>
                 <li className='hover:border p-5 rounded-2xl hover:text-white hover:bg-gradient-to-r hover:from-indigo-500 hover:via-purple-500 hover:to-pink-500'>CATEGORIES</li>
                 <li className='hover:border p-5 rounded-2xl hover:text-white hover:bg-gradient-to-r hover:from-indigo-500 hover:via-purple-500 hover:to-pink-500'>SEARCH</li>
