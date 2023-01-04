@@ -6,10 +6,9 @@ function SignUp() {
         <div className='flex'>
             <div className='w-full h-screen lg:w-1/2 lg:flex flex-col overflow-y-auto'>
                 {/* <img src={Logo} alt="Shop Thrift" className='lg:absolute sticky m-10 lg:top-0 text-3xl font-semibold font-serif text-slate-700' /> */}
-                <div className=' sticky top-0 backdrop-blur-lg'>
-                    <h1 className=' mx-10 my-10 text-3xl font-semibold font-serif text-slate-700'>Shop Thrift</h1>
+                <div className='sticky top-0 backdrop-blur-lg'>
+                    <h1 className=' px-10 py-10 text-3xl font-semibold font-serif text-slate-700'>Shop Thrift</h1>
                 </div>
-
                 <div className='container mx-auto lg:w-3/5 w-4/5'>
                     <h1 className='text-4xl font-semibold'>Sign Up</h1>
                     <p className='text-lg font-semibold mt-2 text-violet-600 mb-10 font-mono'>Create an account with us today</p>

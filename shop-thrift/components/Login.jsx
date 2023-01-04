@@ -7,6 +7,7 @@ function Login() {
     const pswdValue = useRef(null)
     const [email, setEmail] = useState("");
     const [pswd, setPswd] = useState("");
+
     function HandleSubmit(e) {
         e.preventDefault()
         setEmail(emailValue.current.value)
@@ -26,11 +27,10 @@ function Login() {
     }
     return (
         <div className='flex'>
-            {/* <img src={Logo} alt="Shop Thrift" className='absolute m-10 text-3xl font-semibold font-serif text-slate-700' /> */}
-
             <div className='w-full h-screen lg:w-1/2 flex flex-col overflow-y-auto'>
+                {/* <img src={Logo} alt="Shop Thrift" className='absolute m-10 text-3xl font-semibold font-serif text-slate-700' /> */}
                 <div className=' sticky top-0 backdrop-blur-lg'>
-                    <h1 className=' mx-10 my-10 text-3xl font-semibold font-serif text-slate-700'>Shop Thrift</h1>
+                    <h1 className=' px-10 py-10 text-3xl font-semibold font-serif text-slate-700'>Shop Thrift</h1>
                 </div>
                 <div className='container mx-auto lg:w-3/5 w-4/5'>
                     <h1 className='text-4xl font-semibold'>Login</h1>
