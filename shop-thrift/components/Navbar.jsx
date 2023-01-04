@@ -12,23 +12,23 @@ function Navbar() {
     const [width, setWidth] = useState("0")
     const [padding, setPadding] = useState("0")
     function SidemenuBar(e) {
-        if (width === "15rem") {
+        if (width === "0") {
+            setWidth("20rem")
+            e.currentTarget.classList.toggle('px-6');
+            setSideMenuIcon(close)
+            setPadding("5px")
+        }
+        else {
             setWidth("0")
             e.currentTarget.classList.toggle('px-6');
             setPadding("0")
             setSideMenuIcon(menu)
         }
-        else {
-            setWidth("15rem")
-            e.currentTarget.classList.toggle('px-6');
-            setSideMenuIcon(close)
-            setPadding("5px")
-        }
     }
 
     return (
-        <div className='bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500'>
-            <div className='h-[12vh] flex justify-between sticky w-full backdrop-blur-lg z-20 '>
+        <div className='sticky top-0 z-40 w-full h-[12vh] bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500'>
+            <div className=' flex justify-between sticky w-full backdrop-blur-lg z-20 '>
                 <h1 className=' px-5 py-5 text-3xl lg:w-3/12  font-semibold font-serif text-slate-100'>Shop Thrift</h1>
                 <div className='hidden lg:flex flex-col justify-center  w-6/12'>
                     <ul className='flex space-x-10 text-slate-100 justify-center font-semibold font-mono text-xl'>
@@ -42,7 +42,7 @@ function Navbar() {
                         </a>
                     </ul>
                 </div>
-                <div className='hidden lg:flex fle x-col justify-center w-3/12 xl:w-6/12'>
+                <div className='hidden lg:flex flex-col justify-center w-3/12 xl:w-6/12'>
                     <div className='flex justify-between'>
                         <div className='w-1/2 h-full xl:flex hidden'>
                             <h1 className='w-1/6 h-full text-slate-100 py-5 text-2xl'>{search}</h1>
